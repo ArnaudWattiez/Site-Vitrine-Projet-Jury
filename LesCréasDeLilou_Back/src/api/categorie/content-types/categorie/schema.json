@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "categorie",
+    "pluralName": "categories",
+    "displayName": "Catégorie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nom": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "produits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produit.produit",
+      "mappedBy": "categorie"
+    }
+  }
+}
